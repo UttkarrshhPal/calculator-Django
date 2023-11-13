@@ -6,9 +6,9 @@ def view1(request):
         form = CalculatorForm(request.POST)
 
         if form.is_valid():
-            num1 = form['num1']
-            num2 = form['num2']
-            opr  = form['opr']
+            num1 = form.cleaned_data['num1']
+            num2 = form.cleaned_data['num2']
+            opr  = form.cleaned_data['opr']
 
             if opr == '+':
                 result = num1+num2
